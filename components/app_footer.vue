@@ -1,6 +1,6 @@
 <template>
     <footer>
-        <p>&copy; {{ currentYear }} <span>| </span><span>MAHER SALEH</span> </p>
+        <p>&copy;&copy; {{ currentYear }} <span>| </span><span>MAHER SALEH</span> </p>
     </footer>
 </template>
 
