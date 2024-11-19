@@ -17,6 +17,7 @@
         position: fixed;
         right: 20px;
         border: none;
+        border-radius: 4px;
         background-color: #00000029;
         display: flex;
         align-items: center;
@@ -24,5 +25,10 @@
         font-weight: bold;
         padding: 5px;
         border-radius: 4px;
+    }
+    button:active {
+        background-color: #00000029 !important;
+        transform: unset !important;
+        box-shadow: unset !important;
     }
 </style>

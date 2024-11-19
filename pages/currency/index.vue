@@ -8,24 +8,25 @@
     <div class="exchange_div" v-if="fetching=='exchange_rate'">
         <div class="currency base">
             <label>Base Currency</label>
-            <autocomplete class="" :items="currencies" @valueChanged="handle_base_currency_value_change($event)"/>
+            <autocomplete :items="currencies" @valueChanged="handle_base_currency_value_change($event)"/>
         </div>
 
         <div class="currency target">
             <label>Target Currency</label>
-            <autocomplete class="" :items="currencies"@valueChanged="handle_target_currency_value_change($event)"/>
+            <autocomplete :items="currencies"@valueChanged="handle_target_currency_value_change($event)"/>
         </div>
         
         <div class="currency button">
             <button class="exchange_button" @click="getExchangeRate">Get Exchange Rate</button>
         </div>
-        
-        <div class="currency rate">
-            <p class="exchange_rate" v-if="exchange_rate && status=='idle'">{{ exchange_rate.value }}</p>
+
+        <div class="currency rate" v-if="fetching=='exchange_rate'">
+            <p class="exchange_rate" v-if="exchange_rate != '' && status=='idle'">{{ exchange_rate.value }}</p>
         </div>
 
         <p class="error" v-if="exchange_error">{{ exchange_error }}</p>
     </div>
+        
 
     <loader v-if="status=='loading'"/>
 
@@ -147,7 +148,7 @@
 
         setTimeout(async () => {
             try {
-                const { data } = await $fetch('/api/currency', {method: 'POST', body: {base_currency, target_currency}});
+                const data = await $fetch('/api/currency', {method: 'POST', body: {base_currency, target_currency}});
 
                 status.value = 'idle';
                 
@@ -168,13 +169,14 @@
     div {
         display: flex;
         flex-wrap: wrap;
-        height: 100%;
+        height: 97px;
     }
 
     div.controls {
         height: auto;
         width: auto;
         margin-left: 20px;
+        justify-content: center;
     }
 
     div.data {
@@ -187,16 +189,27 @@
 
     div.exchange_div {
         margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(1, 354px);
+        justify-content: center;
+        align-items: center;
     }
 
     div.currency {
-        width: 500px;
         padding: 10px 20px;
         display: block;
+    }
+    
+    div.currency.rate {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     div.currency.button {
         display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     button {
@@ -208,6 +221,7 @@
         padding: 8px 10px;
         background-color: #96e9b9;
         border: none;
+        border-radius: 4px;
         box-shadow: 0px 1px 5px #5d5d5d;
         cursor: pointer;
         font-weight: bold;
@@ -262,6 +276,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        background-color: #ededed;
+        border-color: #97a5e7;
     }
 
     p.error {
@@ -269,6 +285,10 @@
         padding: 0 20px;
         color: #b30c00;
         margin: 0;
+    }
+
+    button.exchange_button {
+        height: max-content;
     }
 
 </style>

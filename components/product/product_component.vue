@@ -52,7 +52,7 @@
     }
 
     div:hover {
-        box-shadow: 3px 4px 5px #d1d1d1, -3px -4px 5px #e3e3e3;
+        box-shadow: 3px 4px 5px #9f9f9f, -3px -4px 5px #9f9f9f;
     }
 
     img {
@@ -63,8 +63,8 @@
 
     p {
         display: -webkit-box;
-        height: 2em;
-        line-height: .96em;  
+        height: 2.4em;
+        line-height: 1.2em;  
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
         line-clamp: 2;
@@ -81,6 +81,7 @@
         padding: 5px 10px;
         background-color: #96e9b9;
         border: none;
+        border-radius: 4px;
         box-shadow: 0px 1px 5px #5d5d5d;
         cursor: pointer;
         font-weight: bold;

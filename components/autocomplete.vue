@@ -69,7 +69,7 @@
     position: absolute;
     background-color: white;
     border: 1px solid #ccc;
-    width: 300px;
+    width: 304px;
     max-height: 200px;
     overflow-y: auto;
     margin: 0;

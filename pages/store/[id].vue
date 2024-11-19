@@ -11,7 +11,7 @@
             <product_component class="product_card_component" :product="p"/>
         </div>
 
-    <p class="description">{{ product_item[0].description }}</p>
+    <p class="description"><b>Item details: </b>{{ product_item[0].description }}</p>
 
 </template>
 
@@ -45,6 +45,10 @@
 
     .product_card_component {
         margin: auto;
+    }
+
+    .product_card_component:hover {
+        box-shadow: unset !important;
     }
 
     p.description {

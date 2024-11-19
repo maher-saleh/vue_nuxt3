@@ -5,6 +5,9 @@
     <div>
         <slot/>
     </div>
+
+    <app_footer/>
+    
 </template>
 
 <script setup>

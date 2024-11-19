@@ -6,3 +6,18 @@
 body {
     margin: 0;
 }
+
+button {
+    transition: .2s;
+    border: 1px solid #d6d6d6 !important;
+}
+
+button:hover {
+    box-shadow: unset !important;
+}
+
+button:active {
+  background-color: #83cba2 !important;
+  transform: scale(0.98);
+  box-shadow: inset 0px 0px 3px #5d5d5d, inset 0px 0px 3px #5d5d5d !important;
+}

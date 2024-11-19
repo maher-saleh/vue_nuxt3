@@ -46,6 +46,6 @@
         grid-template-columns: repeat(auto-fill, minmax(280px, auto));
         justify-content: center;
         align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
     }
 </style>

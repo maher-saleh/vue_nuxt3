@@ -39,6 +39,7 @@
         padding: 8px 10px;
         background-color: #96d2e9;
         border: none;
+        border-radius: 4px;
         box-shadow: 0px 1px 5px #5d5d5d;
         cursor: pointer;
         font-weight: bold;
