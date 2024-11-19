@@ -14,7 +14,7 @@
     const route = useRoute();
     const routePath = computed(() => {
         let path = route.path.replace(/^\//, "");
-        return path === '' ? 'Home' : path;
+        return path === '' ? 'About' : path;
     });
 </script>
 

@@ -12,8 +12,7 @@
                     </svg>
                 </a>
                 <ul ref="menu_list">
-                    <li><nuxt-link to="/">Home</nuxt-link></li>
-                    <li><nuxt-link to="/about">About</nuxt-link></li>
+                    <li><nuxt-link to="/">About</nuxt-link></li>
                     <li><nuxt-link to="/store">Store</nuxt-link></li>
                     <li><nuxt-link to="/currency">Currency</nuxt-link></li>
                 </ul>
@@ -209,21 +208,6 @@
         body:has(nav ul.open) #body-container #control-panel-container {
             filter: brightness(0.8) blur(10px);
             transition: unset;
-        }
-    }
-
-    @keyframes tab-title{
-        0% {
-            top: -20px;
-            opacity: 0;
-        }
-        50% {
-            top: -20px;
-            opacity: 0;
-        }
-        100% {
-            top: 0px;
-            opacity: 1;
         }
     }
 </style>
