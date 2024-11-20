@@ -185,6 +185,7 @@
         grid-gap: 0px 30px;
         font-size: 16px;
         padding: 20px;
+        height: 100%;
     }
 
     div.exchange_div {
